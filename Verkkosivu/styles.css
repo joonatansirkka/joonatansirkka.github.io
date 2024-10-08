@@ -1,0 +1,181 @@
+/* Perustyylit */
+body {
+    font-family: 'Aptos Narrow', sans-serif;
+    background-color: #45c7ff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden; /* Estetään vaakasuora vieritys */
+    touch-action: manipulation; /* Vähentää zoomausta kosketuslaitteilla */
+}
+
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute; /* Sijoitetaan hampurilaisvalikko absoluuttisesti */
+    top: 10px; /* Sijoitetaan ylös */
+    right: 10px; /* Sijoitetaan oikealle */
+    z-index: 10; /* Varmistetaan, että se näkyy muiden elementtien päällä */
+    background-color: #e6e6e6; /* Hampurilaisvalikon taustaväri */
+    color: #0d0d0d; /* Hampurilaisvalikon viivojen väri */
+    border: none;
+    border-radius: 4px;
+}
+
+nav {
+    background-color: #e6e6e6; /* Hampurilaisvalikon taustaväri */
+    position: absolute; /* Sijoitetaan nav absoluuttisesti */
+    top: 50px; /* Sijoitetaan valikko hampurilaisvalikon alle */
+    left: 0;
+    right: 0;
+    z-index: 5; /* Varmistetaan, että valikko näkyy hampurilaisvalikon takana */
+    display: none; /* Aluksi piilotetaan nav */
+}
+
+nav.active {
+    display: block; /* Näytetään nav, kun hampurilaisvalikko on aktiivinen */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #0d0d0d; /* Viivojen väri */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #cccccc; /* Hover-efekti */
+}
+
+.header {
+    text-align: center;
+    padding: 60px 20px 20px 20px; /* Padding yläreunasta hampurilaisvalikon tilaa varten */
+}
+
+.content {
+    padding: 20px;
+    text-align: center; /* Keskitetään teksti */
+}
+
+h1, h2, h3 {
+    font-family: 'Aptos Display', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Footer-tyylit */
+.footer {
+    display: flex;
+    justify-content: center; /* Keskittää ikonit vaakasuunnassa */
+    align-items: center; /* Keskittää ikonit pystysuunnassa */
+    padding: 20px;
+    background-color: #e6e6e6; /* Taustaväri footerille */
+}
+
+.footer a {
+    color: #0d0d0d; /* Ikonien väri */
+    font-size: 24px; /* Ikonien koko */
+    margin: 0 10px; /* Väli ikonien välillä */
+    transition: color 0.3s; /* Hover-efektin animaatio */
+}
+
+.footer a:hover {
+    color: #45c7ff; /* Väri hover-tilassa */
+}
+
+/* Estetään skaalaus zoomattaessa */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Yleiset tyylit */
+.hidden {
+    display: none;
+}
+
+/* Mobile-first -tyylit */
+@media (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+
+    /* Pienemmät ikonit mobiilissa */
+    .footer a {
+        font-size: 20px;
+        margin: 0 8px;
+    }
+}
+
+/* Tyylit suuremmille näytöille */
+@media (min-width: 601px) {
+    nav {
+        display: block; /* Näytetään nav kaikilla laitteilla */
+        position: fixed; /* Tehdään nav kiinteäksi */
+        top: 50px; /* Hampurilaisvalikon alle */
+    }
+
+    nav ul {
+        display: flex; /* Käytetään flexiä vaakasuoralle asettelulle */
+        justify-content: center; /* Keskitetään valikkokohteet */
+    }
+
+    nav ul li {
+        margin: 0 20px; /* Väli valikkokohteiden välillä */
+    }
+
+    .hamburger {
+        display: block; /* Näytetään hampurilaisvalikko kaikilla laitteilla */
+    }
+}
+.profile-image {
+    width: 250px; /* tai mikä tahansa haluamasi leveys */
+    height: auto; /* säilyttää kuvan mittasuhteet */
+    border-radius: 5%; /* pyöristää kuvan kulmat, jos haluat ympyrän */
+}
